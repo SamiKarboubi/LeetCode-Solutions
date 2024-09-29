@@ -1,0 +1,20 @@
+class Solution(object):
+    def groupAnagrams(self, strs):
+        """
+        :type strs: List[str]
+        :rtype: List[List[str]]
+        """
+        anagram={}
+        for s in strs:
+            sorted_s="".join(sorted(s))
+            if sorted_s not in anagram:
+                anagram[sorted_s]=[]
+            anagram[sorted_s].append(s)
+        return list(anagram.values())
+
+
+
+                
+
+
+                
