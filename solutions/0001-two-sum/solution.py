@@ -1,13 +1,9 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        pair={}
-        for i,num in enumerate(nums):
-            if target-num in pair:
-                return [i,pair[target-num]]
-            pair[num]=i
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        index = {}
+
+        for i in range(len(nums)):
+            if target - nums[i] in index:
+                return [i,index[target - nums[i]]]
+            index[nums[i]] = i
 
