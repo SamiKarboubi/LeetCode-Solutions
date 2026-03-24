@@ -1,16 +1,16 @@
-class Solution(object):
-    def plusOne(self, digits):
-        """
-        :type digits: List[int]
-        :rtype: List[int]
-        """
-        k=""
-        for i in range(len(digits)):
-            k=k+str(digits[i])
-        k=int(k)
-        k=k+1
-        k=str(k)
-        k=list(k)
-        for i in range(len(k)):
-            k[i]=int(k[i])
-        return k
+class Solution:
+    def plusOne(self, digits: List[int]) -> List[int]:
+        
+        i = len(digits) - 1
+        digits[i] += 1
+        while i > 0 and digits[i] == 10:
+            digits[i] = 0
+            digits[i-1] += 1
+            i -= 1
+        
+        if digits[0] == 10:
+            digits[0] = 0
+            digits = [1] + digits
+        
+        return digits
+        
